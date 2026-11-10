@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>流式细胞仪：从细胞计数到单细胞分析 · 实验安全与生物安全</title>
+  <meta name="description" content="中山大学「实验安全与生物安全」课程汇报用离线演示：流式细胞仪发展史、用途、原理与可操作教学模拟、规范操作与生物安全。示意性教学模拟，非大学官方文件。" />
+  <link rel="stylesheet" href="assets/presentation.css?v=4" />
+</head>
+<body>
+  <div id="deck">
+    <div id="stage">
+      <div class="hud-corner tl" aria-hidden="true"></div>
+      <div class="hud-corner tr" aria-hidden="true"></div>
+      <div class="hud-corner bl" aria-hidden="true"></div>
+      <div class="hud-corner br" aria-hidden="true"></div>
+      <div id="progress" aria-hidden="true"><span></span></div>
+
+      <!-- 1 封面 -->
+      <section class="slide slide-cover active" data-id="cover" data-hint="开场约20秒：点明仪器从计数走向单细胞多参数分析；本课重点是原理可现场演示、安全要记牢。不必念副标题以外的装饰文字。">
+        <div class="cover-grid">
+          <div class="cover-copy">
+            <p class="course">中山大学　课程汇报　「实验安全与生物安全」</p>
+            <h1><span>FLOW CYTOMETRY</span>流式细胞仪</h1>
+            <p class="sub">从<em>细胞计数</em>到<em>单细胞分析</em></p>
+            <div class="cover-meta">
+              <span class="rule" aria-hidden="true"></span>
+              <span>约 8 分钟汇报　·　随后提问 2–3 分钟</span>
+            </div>
+            <p class="note-lite" style="margin-top:28px">空格 / 方向键翻页　·　F 全屏　·　H 演讲提示　·　Esc 总览　·　本文件可离线打开</p>
+          </div>
+          <div class="cover-art" aria-hidden="true">
+            <svg id="cover-svg" viewBox="0 0 900 1080" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="sheathGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#56B4E9" stop-opacity="0"/>
+                  <stop offset=".2" stop-color="#56B4E9" stop-opacity=".35"/>
+                  <stop offset=".8" stop-color="#56B4E9" stop-opacity=".35"/>
+                  <stop offset="1" stop-color="#56B4E9" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="coreGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#E69F00" stop-opacity="0"/>
+                  <stop offset=".45" stop-color="#E69F00" stop-opacity=".85"/>
+                  <stop offset="1" stop-color="#E69F00" stop-opacity="0"/>
+                </linearGradient>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="8" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <rect width="900" height="1080" fill="#0A101C"/>
+              <text x="80" y="160" fill="#6E778C" font-size="14" font-family="ui-monospace, monospace" letter-spacing="4">INTERROGATION POINT</text>
+              <path d="M80 540 H820" stroke="url(#sheathGrad)" stroke-width="88" fill="none"/>
+              <path d="M80 540 H820" stroke="url(#coreGrad)" stroke-width="8" fill="none"/>
+              <line x1="520" y1="180" x2="520" y2="900" stroke="#F0E442" stroke-width="2" opacity=".85" filter="url(#glow)"/>
+              <line x1="520" y1="180" x2="520" y2="900" stroke="#F0E442" stroke-width="10" opacity=".12"/>
+              <circle cx="520" cy="540" r="16" fill="none" stroke="#F4F1EA" stroke-width="1" opacity=".5"/>
+              <text x="536" y="200" fill="#F0E442" font-size="12" font-family="ui-monospace, monospace" letter-spacing="3">LASER</text>
+              <text x="80" y="500" fill="#56B4E9" font-size="12" font-family="ui-monospace, monospace" letter-spacing="2">SHEATH</text>
+              <text x="80" y="590" fill="#E69F00" font-size="12" font-family="ui-monospace, monospace" letter-spacing="2">SAMPLE CORE</text>
+              <g id="cover-cells"></g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 汇报路径 -->
+      <section class="slide" data-id="path" data-hint="约20秒：用六段路径说明接下来怎么走。可强调「原理含可操作模拟」和「安全是本课权重所在」。">
+        <p class="kicker"><span class="num">02 / 11</span> 汇报路径</p>
+        <h2 class="slide-title">今晚只走这一条流路</h2>
+        <p class="lede">先建立历史与用途的坐标，再进入可操作的检测原理，最后把规范操作与生物安全说清楚。文献留在提问时查阅。</p>
+        <div class="path-wrap">
+          <div class="path-line">
+            <button class="path-node" data-go="3" type="button">
+              <div class="idx">01</div>
+              <h3>发展简史</h3>
+              <p>库尔特计数，再到鞘流、荧光与商品化分选。</p>
+            </button>
+            <button class="path-node" data-go="4" type="button">
+              <div class="idx">02</div>
+              <h3>核心用途</h3>
+              <p>免疫分型、周期与凋亡、细胞分选，以及药学场景。</p>
+            </button>
+            <button class="path-node" data-go="5" type="button">
+              <div class="idx">03</div>
+              <h3>三大系统</h3>
+              <p>流体、光学、电子与分析，一张可互动总览。</p>
+            </button>
+            <button class="path-node" data-go="6" type="button">
+              <div class="idx">04</div>
+              <h3>原理与模拟</h3>
+              <p>当场“操作”教学模拟器，看聚焦、激光与点图。</p>
+            </button>
+            <button class="path-node" data-go="7" type="button">
+              <div class="idx">05</div>
+              <h3>规范操作</h3>
+              <p>开机预热、质控、上样、清洗、关机。</p>
+            </button>
+            <button class="path-node" data-go="8" type="button">
+              <div class="idx">06</div>
+              <h3>安全要点</h3>
+              <p>生物安全、激光、气溶胶、废液与锐器。</p>
+            </button>
+          </div>
+          <div class="path-legend">
+            <span>建议节奏：历史与用途约 2 分钟 · 原理模拟约 2.5–3 分钟 · 安全约 1.5–2 分钟</span>
+            <span>点击节点可跳转　·　本页为导航，不必逐句念完</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 发展简史 -->
+      <section class="slide" data-id="history" data-hint="约60–70秒：抓住四五个节点即可（库尔特、鞘流、1965光学/分选、FACS、今天的多参数），不要念年表。可拖动时间轴。">
+        <p class="kicker"><span class="num">03 / 11</span> 发展简史</p>
+        <h2 class="slide-title">从电阻脉冲到多参数单细胞分析</h2>
+        <p class="lede">下面是可核对的主线节点。拖动或点击时间轴查看详情。个别商品化年份在不同回顾中有出入，本页不作单一日期断言。</p>
+        <div class="timeline-shell">
+          <div class="scrub" id="timeline">
+            <div class="scrub-track" id="tl-track">
+              <div class="scrub-rail"></div>
+              <div class="scrub-fill" id="tl-fill"></div>
+              <div class="scrub-knob" id="tl-knob" role="slider" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0" aria-label="发展史时间轴" tabindex="0"></div>
+              <div id="tl-ticks"></div>
+            </div>
+          </div>
+          <article class="tl-card" id="tl-card">
+            <div>
+              <div class="year" id="tl-year"></div>
+              <div class="tag" id="tl-tag"></div>
+              <div class="who" id="tl-who"></div>
+            </div>
+            <div>
+              <div class="body" id="tl-body"></div>
+              <div class="src" id="tl-src"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 4 核心用途 -->
+      <section class="slide" data-id="uses" data-hint="约50秒：四张卡片各用一句话。药学场景落到周期、凋亡、免疫分型、细胞制品检测。点击卡片展开补充。">
+        <p class="kicker"><span class="num">04 / 11</span> 核心用途</p>
+        <h2 class="slide-title">在单细胞尺度上看什么、分什么</h2>
+        <p class="lede">流式细胞术的价值，在于对大量单细胞同时获得物理特征与标记信号。点击卡片展开补充说明。</p>
+        <div class="use-grid">
+          <button class="use-card" type="button">
+            <div class="top">
+              <div>
+                <div class="n">01　IMMUNOPHENOTYPING</div>
+                <h3>免疫分型</h3>
+                <p class="brief">用荧光抗体识别细胞表面或胞内标志，分析淋巴细胞等免疫细胞亚群及其相对比例。</p>
+              </div>
+            </div>
+            <div class="more">这是临床与基础免疫学中最经典的应用之一。多色方案需要合理的对照、补偿或光谱拆分，以及清晰的设门策略。本演示不展开具体抗体面板。</div>
+            <div class="hint">点击展开 / 收起</div>
+          </button>
+          <button class="use-card" type="button">
+            <div class="top">
+              <div>
+                <div class="n">02　CYCLE &amp; DEATH</div>
+                <h3>周期与凋亡</h3>
+                <p class="brief">DNA 含量分析可区分 G0/G1、S、G2/M；膜联蛋白 V（Annexin V）与膜完整性染料等常用于凋亡相关分析。</p>
+              </div>
+            </div>
+            <div class="more">周期分析依赖核酸染料与适当的聚合体排除；凋亡检测的具体组合（如 Annexin V 搭配碘化丙啶或同类活细胞染料）需按试剂说明和实验设计执行，结果解释要结合生物学对照。</div>
+            <div class="hint">点击展开 / 收起</div>
+          </button>
+          <button class="use-card" type="button">
+            <div class="top">
+              <div>
+                <div class="n">03　SORTING</div>
+                <h3>细胞分选</h3>
+                <p class="brief">按设定表型把目标细胞分到收集管，供后续培养、测序或功能实验。分选与纯分析的安全风险并不相同。</p>
+              </div>
+            </div>
+            <div class="more">静电液滴分选在高速喷口条件下可产生可吸入气溶胶，喷嘴堵塞时尤为明显。未固定或感染性样本的分选，必须纳入生物安全评估。详见第 8 部分。</div>
+            <div class="hint">点击展开 / 收起</div>
+          </button>
+          <button class="use-card" type="button">
+            <div class="top">
+              <div>
+                <div class="n">04　PHARMACY-RELATED</div>
+                <h3>药学相关场景</h3>
+                <p class="brief">常用于观察化合物对周期阻滞与凋亡的影响、免疫细胞响应，以及抗体或细胞制品的表型检测。</p>
+              </div>
+            </div>
+            <div class="more">这些都是文献中常见的研究用途，不是对某一具体药品的结论。任何用于决策的检测都需要经验证的方法、对照与质量控制，并遵守样本相关的生物安全要求。</div>
+            <div class="hint">点击展开 / 收起</div>
+          </button>
+        </div>
+      </section>
+
+      <!-- 5 三大系统 -->
+      <section class="slide" data-id="systems" data-hint="约50秒：建立「流体把细胞排成单列、光学取信号、电子做分析」三句话图景。可悬停或点击图中的三个系统。">
+        <p class="kicker"><span class="num">05 / 11</span> 三大系统</p>
+        <h2 class="slide-title">一台仪器，三条彼此咬合的链路</h2>
+        <p class="lede">将指针移到示意图的着色区域，或使用右侧按钮，查看流体、光学与电子/分析系统。本图为教学示意，不对应某一型号的真实尺寸。</p>
+        <div class="sys-layout">
+          <div class="sys-stage" id="sys-stage">
+            <svg viewBox="0 0 1000 640" role="img" aria-label="流式细胞仪三大系统示意：左侧样品与鞘液，中部流动室与激光检测点，右侧检测器与分析工作站">
+              <defs>
+                <linearGradient id="sysSheath" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#56B4E9" stop-opacity=".15"/>
+                  <stop offset="1" stop-color="#56B4E9" stop-opacity=".55"/>
+                </linearGradient>
+                <filter id="sysGlow"><feGaussianBlur stdDeviation="4"/></filter>
+              </defs>
+              <text x="40" y="36" fill="#6E778C" font-size="13" font-family="ui-monospace,monospace" letter-spacing="3">SCHEMATIC · NOT TO SCALE</text>
+
+              <g class="sys-hot" data-sys="fluid" tabindex="0" role="button" aria-label="流体系统">
+                <rect x="40" y="80" width="160" height="130" rx="8" fill="#123044" stroke="#56B4E9" stroke-width="1.5"/>
+                <text x="120" y="130" text-anchor="middle" fill="#56B4E9" font-size="15">鞘液桶</text>
+                <text x="120" y="154" text-anchor="middle" fill="#9AA3B8" font-size="12">SHEATH</text>
+                <rect x="40" y="250" width="160" height="90" rx="8" fill="#2A2208" stroke="#E69F00" stroke-width="1.5"/>
+                <text x="120" y="292" text-anchor="middle" fill="#E69F00" font-size="15">样品管</text>
+                <text x="120" y="314" text-anchor="middle" fill="#9AA3B8" font-size="12">SAMPLE</text>
+                <rect x="40" y="470" width="160" height="90" rx="8" fill="#1A1A1A" stroke="#9AA3B8" stroke-width="1.5"/>
+                <text x="120" y="512" text-anchor="middle" fill="#F4F1EA" font-size="15">废液桶</text>
+                <text x="120" y="534" text-anchor="middle" fill="#9AA3B8" font-size="12">WASTE</text>
+                <path d="M200 145 H300 V320 H360" fill="none" stroke="#56B4E9" stroke-width="8" opacity=".7"/>
+                <path d="M200 295 H300" fill="none" stroke="#E69F00" stroke-width="4"/>
+                <path d="M640 320 H780 V515 H200" fill="none" stroke="#6E778C" stroke-width="6"/>
+              </g>
+
+              <g class="sys-hot" data-sys="optics" tabindex="0" role="button" aria-label="光学系统">
+                <rect x="360" y="200" width="280" height="240" rx="10" fill="#0E1524" stroke="#F0E442" stroke-width="1.2"/>
+                <path d="M380 320 H620" stroke="#56B4E9" stroke-width="36" opacity=".25"/>
+                <path d="M400 320 H620" stroke="#E69F00" stroke-width="5"/>
+                <line x1="520" y1="160" x2="520" y2="480" stroke="#F0E442" stroke-width="3" opacity=".9"/>
+                <rect x="536" y="128" width="58" height="26" rx="4" fill="#3A3508" stroke="#F0E442"/>
+                <text x="565" y="146" text-anchor="middle" fill="#F0E442" font-size="12" font-family="ui-monospace,monospace">LASER</text>
+                <circle cx="520" cy="320" r="10" fill="none" stroke="#F4F1EA" stroke-width="1"/>
+                <text x="536" y="310" fill="#F4F1EA" font-size="12">检测点</text>
+                <!-- FSC -->
+                <path d="M620 320 H700" stroke="#F4F1EA" stroke-width="2"/>
+                <rect x="700" y="300" width="70" height="40" rx="4" fill="#1B2540" stroke="#F4F1EA"/>
+                <text x="735" y="324" text-anchor="middle" fill="#F4F1EA" font-size="12">FSC</text>
+                <!-- SSC / FL at 90° -->
+                <path d="M520 200 V80 H700" stroke="#CC79A7" stroke-width="2"/>
+                <rect x="700" y="60" width="70" height="40" rx="4" fill="#2A1824" stroke="#CC79A7"/>
+                <text x="735" y="84" text-anchor="middle" fill="#CC79A7" font-size="12">FL</text>
+                <path d="M520 440 V560 H700" stroke="#009E73" stroke-width="2"/>
+                <rect x="700" y="540" width="70" height="40" rx="4" fill="#0E2A22" stroke="#009E73"/>
+                <text x="735" y="564" text-anchor="middle" fill="#009E73" font-size="12">SSC</text>
+                <text x="500" y="590" fill="#6E778C" font-size="11">滤光片 / 二向色镜未逐一画出</text>
+              </g>
+
+              <g class="sys-hot" data-sys="electro" tabindex="0" role="button" aria-label="电子与分析系统">
+                <rect x="800" y="200" width="160" height="280" rx="8" fill="#141C2E" stroke="#0072B2" stroke-width="1.5"/>
+                <rect x="820" y="220" width="120" height="80" fill="#0A101C" stroke="#56B4E9" opacity=".9"/>
+                <circle cx="850" cy="250" r="3" fill="#56B4E9"/>
+                <circle cx="870" cy="265" r="3" fill="#E69F00"/>
+                <circle cx="890" cy="255" r="3" fill="#CC79A7"/>
+                <text x="880" y="330" text-anchor="middle" fill="#F4F1EA" font-size="14">工作站</text>
+                <text x="880" y="354" text-anchor="middle" fill="#9AA3B8" font-size="12">脉冲 · 转换 · 设门</text>
+                <text x="880" y="400" text-anchor="middle" fill="#0072B2" font-size="13">电子 / 分析</text>
+              </g>
+            </svg>
+          </div>
+          <aside class="sys-panel">
+            <div class="sys-tabs" role="tablist">
+              <button class="sys-tab" data-sys="fluid" role="tab" aria-selected="true" type="button">流体</button>
+              <button class="sys-tab" data-sys="optics" role="tab" aria-selected="false" type="button">光学</button>
+              <button class="sys-tab" data-sys="electro" role="tab" aria-selected="false" type="button">电子 / 分析</button>
+            </div>
+            <h3 id="sys-title">流体系统</h3>
+            <div class="body" id="sys-body"></div>
+            <div class="legend-row">
+              <span><i class="sw" style="background:#56B4E9"></i>鞘液</span>
+              <span><i class="sw" style="background:#E69F00"></i>样品流</span>
+              <span><i class="sw" style="background:#F0E442"></i>激光（形状+文字编码）</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 6 原理 + 模拟器 -->
+      <section class="slide slide-sim" data-id="sim" data-hint="本页是核心，约2.5–3分钟。建议顺序：确认联锁→开激光→选校准微球、鞘液高于样品流→采集，指出FSC/SSC/荧光；再把样品流调高看点图变散；最后关激光或打开光阑，演示联锁或无信号。可按「演示脚本」。">
+        <div class="sim-head">
+          <div>
+            <p class="kicker" style="margin-bottom:8px"><span class="num">06 / 11</span> 检测原理</p>
+            <h2 class="slide-title">在检测点上看清一个细胞，并亲手调一调</h2>
+          </div>
+          <span class="badge">示意性教学模拟　·　非真实仪器规格</span>
+        </div>
+        <div class="sim-grid">
+          <div class="panel">
+            <div class="panel-h">流体聚焦与光学检测示意 <span>细胞单列通过激光照射点</span></div>
+            <div class="sim-schematic" id="sim-schematic">
+              <svg id="sim-svg" viewBox="0 0 760 620" aria-label="流动室示意：鞘液包围样品流，细胞经过激光检测点，前方和侧向检测器收集信号">
+                <defs>
+                  <linearGradient id="simSheath" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#56B4E9" stop-opacity=".05"/>
+                    <stop offset=".5" stop-color="#56B4E9" stop-opacity=".35"/>
+                    <stop offset="1" stop-color="#56B4E9" stop-opacity=".08"/>
+                  </linearGradient>
+                  <filter id="laserGlow"><feGaussianBlur stdDeviation="6"/></filter>
+                  <clipPath id="flowClip"><rect x="80" y="200" width="520" height="200" rx="8"/></clipPath>
+                </defs>
+                <rect width="760" height="620" fill="#0A101C"/>
+                <text x="24" y="32" fill="#6E778C" font-size="11" font-family="ui-monospace,monospace" letter-spacing="2">FLOW CELL · HYDRODYNAMIC FOCUSING</text>
+
+                <!-- tanks -->
+                <rect x="20" y="70" width="88" height="70" rx="6" fill="#123044" stroke="#56B4E9"/>
+                <text x="64" y="100" text-anchor="middle" fill="#56B4E9" font-size="12">鞘液</text>
+                <text x="64" y="118" text-anchor="middle" fill="#9AA3B8" font-size="10">SHEATH</text>
+                <rect x="20" y="150" width="88" height="54" rx="6" fill="#2A2208" stroke="#E69F00"/>
+                <text x="64" y="182" text-anchor="middle" fill="#E69F00" font-size="12">样品</text>
+                <rect x="20" y="480" width="88" height="54" rx="6" fill="#1A1A1A" stroke="#9AA3B8"/>
+                <text x="64" y="512" text-anchor="middle" fill="#F4F1EA" font-size="12">废液</text>
+
+                <!-- flow chamber -->
+                <rect x="80" y="200" width="520" height="200" rx="8" fill="url(#simSheath)" stroke="#1E3A4C"/>
+                <polygon id="sim-core" points="140,312 140,288 560,300 560,308" fill="#E69F00" opacity=".85"/>
+                <g id="sim-cells" clip-path="url(#flowClip)"></g>
+
+                <!-- laser -->
+                <g id="sim-laser">
+                  <rect x="372" y="40" width="56" height="28" rx="3" fill="#3A3508" stroke="#F0E442"/>
+                  <text x="400" y="59" text-anchor="middle" fill="#F0E442" font-size="11" font-family="ui-monospace,monospace">LASER</text>
+                  <rect id="laser-beam" x="396" y="68" width="8" height="400" fill="#F0E442" opacity=".75" filter="url(#laserGlow)"/>
+                  <rect x="392" y="68" width="16" height="400" fill="#F0E442" opacity=".12"/>
+                </g>
+                <circle cx="400" cy="300" r="14" fill="none" stroke="#F4F1EA" stroke-width="1" opacity=".6"/>
+                <text x="418" y="250" fill="#F4F1EA" font-size="11">检测点</text>
+
+                <!-- detectors -->
+                <path d="M600 300 H680" stroke="#F4F1EA" stroke-width="2"/>
+                <rect x="680" y="278" width="60" height="44" rx="4" fill="#1B2540" stroke="#F4F1EA"/>
+                <text x="710" y="304" text-anchor="middle" fill="#F4F1EA" font-size="12">FSC</text>
+                <text x="710" y="338" text-anchor="middle" fill="#6E778C" font-size="10">前向散射</text>
+
+                <path d="M400 400 V500 H680" stroke="#009E73" stroke-width="2"/>
+                <rect x="680" y="478" width="60" height="44" rx="4" fill="#0E2A22" stroke="#009E73"/>
+                <text x="710" y="504" text-anchor="middle" fill="#009E73" font-size="12">SSC</text>
+                <text x="710" y="538" text-anchor="middle" fill="#6E778C" font-size="10">侧向散射</text>
+
+                <path d="M400 200 V110 H680" stroke="#CC79A7" stroke-width="2"/>
+                <rect x="680" y="88" width="60" height="44" rx="4" fill="#2A1824" stroke="#CC79A7"/>
+                <text x="710" y="114" text-anchor="middle" fill="#CC79A7" font-size="12">FL</text>
+                <text x="710" y="148" text-anchor="middle" fill="#6E778C" font-size="10">荧光</text>
+
+                <text x="24" y="590" fill="#6E778C" font-size="11">FSC ≈ 相对大小　·　SSC ≈ 内部复杂度 / 颗粒度　·　FL ≈ 标记荧光</text>
+                <text id="sim-aperture-tag" x="360" y="36" fill="#D55E00" font-size="12" font-family="ui-monospace,monospace" visibility="hidden">⚠ 光阑未关闭（联锁）</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-h">操作台 <span>请先满足安全联锁</span></div>
+            <div class="controls">
+              <div class="ctrl">
+                <label for="sheath">鞘液流速</label>
+                <input id="sheath" type="range" min="20" max="100" value="75" />
+                <output id="sheath-out">75</output>
+              </div>
+              <div class="ctrl">
+                <label for="sample">样品流速</label>
+                <input id="sample" type="range" min="5" max="100" value="25" />
+                <output id="sample-out">25</output>
+              </div>
+              <div class="ctrl">
+                <label for="gain">PMT 增益</label>
+                <input id="gain" type="range" min="20" max="140" value="70" />
+                <output id="gain-out">70</output>
+              </div>
+              <div class="ctrl">
+                <label for="thr">FSC 阈值</label>
+                <input id="thr" type="range" min="0" max="40" value="8" />
+                <output id="thr-out">8</output>
+              </div>
+
+              <div style="color:#9AA3B8;font-size:12px;letter-spacing:.12em;margin-top:4px">样品选择</div>
+              <div class="seg" id="sample-type" role="group" aria-label="样品选择">
+                <button type="button" data-type="beads" aria-pressed="true">校准微球</button>
+                <button type="button" data-type="lymph">淋巴细胞</button>
+                <button type="button" data-type="apo">凋亡混合样</button>
+              </div>
+
+              <div style="color:#9AA3B8;font-size:12px;letter-spacing:.12em;margin-top:4px">激光与联锁</div>
+              <div class="locks">
+                <button type="button" class="lock ok" id="btn-laser" aria-pressed="true">激光：开</button>
+                <button type="button" class="lock ok" id="btn-aperture" aria-pressed="true">光阑：已关闭</button>
+                <button type="button" class="lock ok" id="btn-waste" aria-pressed="true">废液桶：已就绪</button>
+              </div>
+
+              <div class="row-btns" style="margin-top:6px">
+                <button type="button" class="btn primary" id="btn-acq">开始采集</button>
+                <button type="button" class="btn" id="btn-clear">清空点图</button>
+                <button type="button" class="btn" id="btn-demo">演示脚本</button>
+              </div>
+              <div class="stats">
+                <span>事件 <b id="stat-events">0</b></span>
+                <span>速率 <b id="stat-rate">0</b>/s</span>
+                <span>聚焦 <b id="stat-focus">良好</b></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-h">实时输出 <span id="plot-caption">FSC–SSC 与荧光</span></div>
+            <div class="plots">
+              <div class="plot-box">
+                <canvas id="plot-ss" width="640" height="320" aria-label="FSC 对 SSC 散点图"></canvas>
+                <span class="plot-lab x">FSC（相对大小）→</span>
+                <span class="plot-lab y">SSC（颗粒度）→</span>
+              </div>
+              <div class="plot-box">
+                <canvas id="plot-fl" width="640" height="320" aria-label="荧光输出图"></canvas>
+                <span class="plot-lab x" id="fl-xlab">荧光强度 →</span>
+                <span class="plot-lab y" id="fl-ylab">计数 →</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sim-coach" id="sim-coach">FSC 主要反映细胞的相对大小，SSC 主要反映内部复杂度或颗粒度，荧光来自标记分子被激光激发后的发射。先确认联锁，打开激光，使鞘液流速明显高于样品流，再开始采集。</div>
+      </section>
+
+      <!-- 7 规范操作 -->
+      <section class="slide" data-id="sop" data-hint="约40秒：五步只强调预热、质控、过滤上样、清洗、按SOP关机。细节以核心实验室和仪器说明书为准。">
+        <p class="kicker"><span class="num">07 / 11</span> 规范操作</p>
+        <h2 class="slide-title">上机五步，细节服从具体 SOP</h2>
+        <p class="lede">不同厂家、分析仪与分选仪的按键和时序并不相同。以下是核心实验室规程中反复出现的共性步骤，不能替代你所在平台的操作文件。</p>
+        <div class="sop-steps">
+          <div class="sop-nav" role="tablist">
+            <button type="button" data-sop="0" aria-selected="true"><span class="n">01</span> 开机预热</button>
+            <button type="button" data-sop="1" aria-selected="false"><span class="n">02</span> 质控</button>
+            <button type="button" data-sop="2" aria-selected="false"><span class="n">03</span> 上样</button>
+            <button type="button" data-sop="3" aria-selected="false"><span class="n">04</span> 清洗</button>
+            <button type="button" data-sop="4" aria-selected="false"><span class="n">05</span> 关机</button>
+          </div>
+          <article class="sop-body" id="sop-body"></article>
+        </div>
+      </section>
+
+      <!-- 8 安全要点 -->
+      <section class="slide slide-safe" data-id="safety" data-hint="本课重心，约1.5–2分钟：先讲风险评估；分选气溶胶高于分析；不要解除激光联锁；废液预消毒并按生物危险废物处理；锐器进防穿刺容器。强调以单位生安委和SOP为准。">
+        <p class="kicker"><span class="num">08 / 11</span> 安全要点</p>
+        <h2 class="slide-title">先评估样本风险，再打开仪器</h2>
+        <div class="safe-grid">
+          <p class="safe-lead">流式检测的是细胞悬液，其中可能含未固定的人源、感染或基因修饰材料。风险来自生物因子、气溶胶、激光和化学染料。必须先做<strong style="color:#F4F1EA;font-weight:600">样本特异性风险评估</strong>，并遵守国家法规与本单位生物安全委员会要求。本页是教学要点，不能替代批准后的规程。</p>
+
+          <button class="safe-card open" type="button">
+            <div class="n">01　BIOSAFETY</div>
+            <h3>生物安全</h3>
+            <p>未固定人源材料应按潜在血源性病原体防护。固定可降低许多病原体风险，但只有经验证的浓度与作用时间才有意义，不能假定“加过固定剂就一定灭活”。感染因子或病毒载体修饰样本，须按相应生物安全级别和单位审批操作。感染性标本不要在开放管中涡旋，封闭管操作并尽量在生物安全柜中进行。</p>
+          </button>
+
+          <button class="safe-card" type="button">
+            <div class="n">02　AEROSOL</div>
+            <h3>气溶胶，尤其是分选</h3>
+            <p>分析型仪器也可能产生液滴或气溶胶，但高速喷口分选——特别是喷嘴堵塞时——可形成可吸入气溶胶，风险显著更高。ISAC 细胞分选生物安全标准强调：对活细胞/未固定样本的分选，应使用经测试的气溶胶管理系统（负压、HEPA/ULPA 等），并在最不利条件下验证屏蔽效果。废液桶通气口宜有适当过滤。</p>
+          </button>
+
+          <button class="safe-card" type="button">
+            <div class="n">03　LASER</div>
+            <h3>激光与联锁</h3>
+            <p>仪器内部常使用较强激光，但正常使用时有防护罩和联锁。分析型仪器在不拆除罩、不解除联锁时，通常不构成对操作者的光束暴露。禁止自行打开光路罩或短接联锁。应有警示标识并接受相应培训，遵守实验室激光安全规定与现行激光产品安全标准。</p>
+          </button>
+
+          <button class="safe-card" type="button">
+            <div class="n">04　WASTE</div>
+            <h3>废液</h3>
+            <p>流式废液常同时带有生物风险和化学风险（染料、固定剂等）。许多核心实验室要求废液桶预先加入适量含氯消毒剂，并按生物危险废物路径处置。具体消毒液种类、浓度和排放方式必须以所在单位 SOP 和环境管理规定为准，不要把未经处理的废液倒入普通水槽了事。</p>
+          </button>
+
+          <button class="safe-card" type="button">
+            <div class="n">05　SHARPS</div>
+            <h3>锐器与防护</h3>
+            <p>玻璃管、针头等锐器必须进入防穿刺、防渗漏的锐器盒，不得回套针头，不得混入普通垃圾袋。实验服、手套为基本防护，必要时增加眼面部防护。发生溢出或暴露，按实验室应急预案处理并报告。门口应有相应的生物危害沟通信息。</p>
+          </button>
+
+          <button class="safe-card" type="button">
+            <div class="n">06　RULES</div>
+            <h3>法规与单位规程</h3>
+            <p>在中国开展相关工作，应遵循《病原微生物实验室生物安全管理条例》、GB 19489《实验室生物安全通用要求》以及单位生物安全委员会的审批意见。激光设备尚须符合现行激光产品安全标准（如 GB/T 7247.1 系列）。国际层面，CDC/NIH 的 BMBL 与 ISAC 分选生物安全标准是重要的专业参照，但不能自动替代国内法规。</p>
+          </button>
+        </div>
+      </section>
+
+      <!-- 9 小结 -->
+      <section class="slide" data-id="summary" data-hint="约30秒：四条带走即可，不必再展开。可提醒模拟器是定性教学模型。">
+        <p class="kicker"><span class="num">09 / 11</span> 小结</p>
+        <h2 class="slide-title">带走这四件事</h2>
+        <ol class="takeaways">
+          <li><span class="n">01</span><span>流式细胞术让细胞在鞘液聚焦下逐个经过检测点，同时获得散射与荧光信息：FSC 侧重相对大小，SSC 侧重颗粒度，荧光对应标记。</span></li>
+          <li><span class="n">02</span><span>流体、光学、电子三大系统缺一不可。样品流相对鞘液过高时，流体聚焦变差，点图会散、测量变差——刚才的模拟就是在演示这件事。</span></li>
+          <li><span class="n">03</span><span>规范操作包含开机预热、质控、上样、清洗与关机。按键细节服从具体仪器和核心实验室 SOP，不要凭记忆省略质控和清洗。</span></li>
+          <li><span class="n">04</span><span>生物安全是本课的重心：先做样本风险评估。未固定样本、分选气溶胶、激光联锁、废液与锐器，都必须认真对待。</span></li>
+        </ol>
+      </section>
+
+      <!-- 10 参考文献 -->
+      <section class="slide" data-id="refs" data-hint="不必逐条念。需要时停留，指出历史、操作与安全三类文献均可核对。">
+        <p class="kicker"><span class="num">10 / 11</span> 参考文献</p>
+        <h2 class="slide-title">可核对的来源</h2>
+        <p class="lede" style="margin-bottom:12px">下列文献用于支撑本演示中的史实、原理表述与安全要点。操作时序引自公开的核心实验室规程，作为常见实践例证，而非全球统一标准。</p>
+        <div class="refs">
+          <h3>历史与原理</h3>
+          <ol>
+            <li>Coulter WH. Means for counting particles suspended in a fluid. US Patent 2,656,508. 申请日 1949-08-27，授权日 1953-10-20. <a href="https://patents.google.com/patent/US2656508A/en" target="_blank" rel="noopener">patents.google.com/patent/US2656508A</a></li>
+            <li>Graham MD. The Coulter Principle: A history. <i>Cytometry A</i>. 2022. <a href="https://doi.org/10.1002/cyto.a.24505" target="_blank" rel="noopener">doi:10.1002/cyto.a.24505</a>　（并参见其对 1948 年 10 月演示的考证：<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4237176/" target="_blank" rel="noopener">PMC4237176</a>）</li>
+            <li>Crosland-Taylor PJ. A device for counting small particles suspended in a fluid through a tube. <i>Nature</i>. 1953;171:37–38. <a href="https://doi.org/10.1038/171037b0" target="_blank" rel="noopener">doi:10.1038/171037b0</a></li>
+            <li>Kamentsky LA, Melamed MR, Derman H. Spectrophotometer: new instrument for ultrarapid cell analysis. <i>Science</i>. 1965;150(3696):630–631. <a href="https://doi.org/10.1126/science.150.3696.630" target="_blank" rel="noopener">doi:10.1126/science.150.3696.630</a></li>
+            <li>Fulwyler MJ. Electronic separation of biological cells by volume. <i>Science</i>. 1965;150(3698):910–911. <a href="https://doi.org/10.1126/science.150.3698.910" target="_blank" rel="noopener">doi:10.1126/science.150.3698.910</a></li>
+            <li>Dittrich W, Göhde W. Impulsfluorometrie bei Einzelzellen in Suspensionen. <i>Z Naturforsch B</i>. 1969;24(3):360–361. <a href="https://doi.org/10.1515/znb-1969-0326" target="_blank" rel="noopener">doi:10.1515/znb-1969-0326</a></li>
+            <li>Hulett HR, Bonner WA, Barrett J, Herzenberg LA. Cell sorting: automated separation of mammalian cells as a function of intracellular fluorescence. <i>Science</i>. 1969;166(3906):747–749. <a href="https://doi.org/10.1126/science.166.3906.747" target="_blank" rel="noopener">doi:10.1126/science.166.3906.747</a></li>
+            <li>Bonner WA, Hulett HR, Sweet RG, Herzenberg LA. Fluorescence activated cell sorting. <i>Rev Sci Instrum</i>. 1972;43(3):404–409. <a href="https://doi.org/10.1063/1.1685647" target="_blank" rel="noopener">doi:10.1063/1.1685647</a></li>
+            <li>Picot J, Guerin CL, Le Van Kim C, Boulanger CM. Flow cytometry: retrospective, fundamentals and recent instrumentation. <i>Cytotechnology</i>. 2012;64(2):109–130. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3279584/" target="_blank" rel="noopener">PMC3279584</a></li>
+            <li>Shapiro HM. <i>Practical Flow Cytometry</i>. 4th ed. Hoboken, NJ: Wiley-Liss; 2003.</li>
+          </ol>
+          <h3>操作实践（例证）</h3>
+          <ol start="11">
+            <li>Houston Methodist Flow Cytometry Core. Standard operating procedures（Fortessa/LSRII 开机预热与关机清洗示例）. <a href="https://www.houstonmethodist.org/academic-institute/research/cores/flow-cytometry/standard-operating-procedures/" target="_blank" rel="noopener">houstonmethodist.org/…/standard-operating-procedures</a></li>
+            <li>UNC Flow Cytometry Core Facility. Cytek Aurora user training SOP（预热、日常质控微球与关机程序示例）.</li>
+          </ol>
+          <h3>生物安全、激光与法规</h3>
+          <ol start="13">
+            <li>Holmes KL, et al. International Society for the Advancement of Cytometry cell sorter biosafety standards. <i>Cytometry A</i>. 2014;85(5):434–453. <a href="https://doi.org/10.1002/cyto.a.22454" target="_blank" rel="noopener">doi:10.1002/cyto.a.22454</a>　<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4117398/" target="_blank" rel="noopener">PMC4117398</a></li>
+            <li>Schmid I, et al. International Society for Analytical Cytology biosafety standard for sorting of unfixed cells. <i>Cytometry A</i>. 2007;71(6):414–437.</li>
+            <li>CDC/NIH. <i>Biosafety in Microbiological and Biomedical Laboratories (BMBL)</i>. 6th ed. 2020. <a href="https://www.cdc.gov/labs/bmbl/" target="_blank" rel="noopener">cdc.gov/labs/bmbl</a></li>
+            <li>中华人民共和国国务院. 病原微生物实验室生物安全管理条例. <a href="https://www.gov.cn/zhengce/zhengceku/2008-03-28/content_6264.htm" target="_blank" rel="noopener">gov.cn 文本</a></li>
+            <li>GB 19489-2008. 实验室生物安全通用要求.</li>
+            <li>GB/T 7247.1 系列. 激光产品的安全（引用时请核对该标准的现行有效版本）.</li>
+            <li>University of Kentucky Research Safety. Flow cytometers / cell sorters（分析与分选气溶胶、废液桶通气过滤等实践说明）. <a href="https://researchsafety.uky.edu/biological-safety/laboratory-equipment/flow-cytometerscell-sorters" target="_blank" rel="noopener">researchsafety.uky.edu/…</a></li>
+            <li>Kansas State University. Cell sorters and cytometers（未固定材料与生物安全柜等实践要点）. <a href="https://www.k-state.edu/safety/programs/lab/labsafety/topics/labequipment/cellSortersCytometers.html" target="_blank" rel="noopener">k-state.edu/…/cellSortersCytometers.html</a></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 11 致谢与提问 -->
+      <section class="slide slide-end" data-id="end" data-hint="致谢后直接提问。若冷场，可用下面四问引导。不要追加个人署名或校徽。">
+        <p class="kicker"><span class="num">11 / 11</span> 致谢</p>
+        <h1>感谢聆听</h1>
+        <p class="sub">欢迎提问　·　约 2–3 分钟</p>
+        <div class="qlist">
+          <div><b>Q1</b>为什么样品流相对鞘液太高时，点图会散？</div>
+          <div><b>Q2</b>分析仪和分选仪，在气溶胶风险上有何不同？</div>
+          <div><b>Q3</b>样本“已经固定”，是否就可以在普通区域随意分析？</div>
+          <div><b>Q4</b>FSC、SSC 和荧光各自主要说明什么？</div>
+        </div>
+        <p class="note-lite" style="margin-top:36px">中山大学　「实验安全与生物安全」课程汇报　·　本文件为教学演示，不代表学校官方发布</p>
+      </section>
+
+      <div id="hintbar" aria-live="polite"><div class="box"><span class="k">SPEAKER</span><span id="hint-text"></span></div></div>
+      <footer id="chrome">
+        <span>实验安全与生物安全　·　流式细胞仪</span>
+        <span class="mid" id="dots"></span>
+        <span><b id="page-ind">01</b> / 11</span>
+      </footer>
+    </div>
+
+    <div id="overview">
+      <h2>总览　·　再次点击进入，Esc 关闭</h2>
+      <div class="ov-grid" id="ov-grid"></div>
+    </div>
+    <div id="help">
+      <div class="card">
+        <h2>键盘与操作</h2>
+        <dl>
+          <dt>→　空格　PageDown</dt><dd>下一页</dd>
+          <dt>←　PageUp</dt><dd>上一页</dd>
+          <dt>Home / End</dt><dd>封面 / 末页</dd>
+          <dt>数字 1–9，0，-</dt><dd>跳到对应页（- 为第 11 页）</dd>
+          <dt>F</dt><dd>全屏</dd>
+          <dt>H</dt><dd>开演讲提示</dd>
+          <dt>Esc</dt><dd>总览 / 关闭浮层</dd>
+          <dt>?</dt><dd>本说明</dd>
+        </dl>
+        <p class="note-lite" style="margin-top:18px">在模拟器页，方向键仍可翻页；请用鼠标或触摸调节控件。本演示可完全离线运行。</p>
+      </div>
+    </div>
+  </div>
+  <script src="assets/presentation.js?v=3"></script>
+</body>
+</html>
