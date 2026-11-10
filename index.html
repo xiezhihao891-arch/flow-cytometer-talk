@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark" />
   <title>流式细胞仪：从细胞计数到单细胞分析 · 实验安全与生物安全</title>
-  <meta name="description" content="中山大学「实验安全与生物安全」课程汇报用离线演示：流式细胞仪发展史、用途、原理与可操作教学模拟、规范操作与生物安全。示意性教学模拟，非大学官方文件。" />
-  <link rel="stylesheet" href="assets/presentation.css?v=4" />
+  <meta name="description" content="中山大学「实验安全与生物安全」课程汇报：流式细胞仪的历史、用途、原理（带一个能动手调的小模拟）、规范操作和生物安全。模拟只是示意，不是学校官方文件。" />
+  <link rel="stylesheet" href="assets/presentation.css?v=5" />
 </head>
 <body>
   <div id="deck">
@@ -18,7 +18,7 @@
       <div id="progress" aria-hidden="true"><span></span></div>
 
       <!-- 1 封面 -->
-      <section class="slide slide-cover active" data-id="cover" data-hint="开场约20秒：点明仪器从计数走向单细胞多参数分析；本课重点是原理可现场演示、安全要记牢。不必念副标题以外的装饰文字。">
+      <section class="slide slide-cover active" data-id="cover" data-hint="开场约20秒：一句话说清楚，这台仪器从“数细胞”发展到“一个个细胞地测多项指标”。今天的重点：原理现场演示，安全要记牢。装饰用的英文不用念。">
         <div class="cover-grid">
           <div class="cover-copy">
             <p class="course">中山大学　课程汇报　「实验安全与生物安全」</p>
@@ -26,9 +26,9 @@
             <p class="sub">从<em>细胞计数</em>到<em>单细胞分析</em></p>
             <div class="cover-meta">
               <span class="rule" aria-hidden="true"></span>
-              <span>约 8 分钟汇报　·　随后提问 2–3 分钟</span>
+              <span>大约讲 8 分钟　·　之后留 2–3 分钟提问</span>
             </div>
-            <p class="note-lite" style="margin-top:28px">空格 / 方向键翻页　·　F 全屏　·　H 演讲提示　·　Esc 总览　·　本文件可离线打开</p>
+            <p class="note-lite" style="margin-top:28px">空格 / 方向键翻页　·　F 全屏　·　H 演讲提示　·　Esc 总览　·　不联网也能打开</p>
           </div>
           <div class="cover-art" aria-hidden="true">
             <svg id="cover-svg" viewBox="0 0 900 1080" preserveAspectRatio="xMidYMid slice">
@@ -66,31 +66,31 @@
       </section>
 
       <!-- 2 汇报路径 -->
-      <section class="slide" data-id="path" data-hint="约20秒：用六段路径说明接下来怎么走。可强调「原理含可操作模拟」和「安全是本课权重所在」。">
+      <section class="slide" data-id="path" data-hint="约20秒：带大家看一下接下来讲哪几块。可以提一句：原理那页能现场动手调，安全是这门课最看重的部分。">
         <p class="kicker"><span class="num">02 / 11</span> 汇报路径</p>
-        <h2 class="slide-title">今晚只走这一条流路</h2>
-        <p class="lede">先建立历史与用途的坐标，再进入可操作的检测原理，最后把规范操作与生物安全说清楚。文献留在提问时查阅。</p>
+        <h2 class="slide-title">今天按这个顺序讲</h2>
+        <p class="lede">先说它是怎么来的、能干什么，再动手看看检测原理，最后讲怎么规范地用、怎么用得安全。参考文献放在后面，提问时可以翻。</p>
         <div class="path-wrap">
           <div class="path-line">
             <button class="path-node" data-go="3" type="button">
               <div class="idx">01</div>
               <h3>发展简史</h3>
-              <p>库尔特计数，再到鞘流、荧光与商品化分选。</p>
+              <p>从库尔特计数，到鞘流、荧光，再到商品化分选仪。</p>
             </button>
             <button class="path-node" data-go="4" type="button">
               <div class="idx">02</div>
               <h3>核心用途</h3>
-              <p>免疫分型、周期与凋亡、细胞分选，以及药学场景。</p>
+              <p>免疫分型、细胞周期和凋亡、细胞分选，还有药学里怎么用。</p>
             </button>
             <button class="path-node" data-go="5" type="button">
               <div class="idx">03</div>
               <h3>三大系统</h3>
-              <p>流体、光学、电子与分析，一张可互动总览。</p>
+              <p>流体、光学、电子分析，一张图看明白。</p>
             </button>
             <button class="path-node" data-go="6" type="button">
               <div class="idx">04</div>
-              <h3>原理与模拟</h3>
-              <p>当场“操作”教学模拟器，看聚焦、激光与点图。</p>
+              <h3>检测原理</h3>
+              <p>现场调一调模拟器，看聚焦、激光和点图怎么变。</p>
             </button>
             <button class="path-node" data-go="7" type="button">
               <div class="idx">05</div>
@@ -100,21 +100,21 @@
             <button class="path-node" data-go="8" type="button">
               <div class="idx">06</div>
               <h3>安全要点</h3>
-              <p>生物安全、激光、气溶胶、废液与锐器。</p>
+              <p>生物安全、激光、气溶胶、废液和锐器。</p>
             </button>
           </div>
           <div class="path-legend">
-            <span>建议节奏：历史与用途约 2 分钟 · 原理模拟约 2.5–3 分钟 · 安全约 1.5–2 分钟</span>
-            <span>点击节点可跳转　·　本页为导航，不必逐句念完</span>
+            <span>时间大概：历史和用途 2 分钟 · 原理模拟 2.5–3 分钟 · 安全 1.5–2 分钟</span>
+            <span>点一下可以直接跳过去　·　这页不用逐字念</span>
           </div>
         </div>
       </section>
 
       <!-- 3 发展简史 -->
-      <section class="slide" data-id="history" data-hint="约60–70秒：抓住四五个节点即可（库尔特、鞘流、1965光学/分选、FACS、今天的多参数），不要念年表。可拖动时间轴。">
+      <section class="slide" data-id="history" data-hint="约60–70秒：挑四五个点讲就行（库尔特、鞘流、1965 年的光学测量和分选、FACS、现在的多参数），别念年表。可以拖时间轴。">
         <p class="kicker"><span class="num">03 / 11</span> 发展简史</p>
-        <h2 class="slide-title">从电阻脉冲到多参数单细胞分析</h2>
-        <p class="lede">下面是可核对的主线节点。拖动或点击时间轴查看详情。个别商品化年份在不同回顾中有出入，本页不作单一日期断言。</p>
+        <h2 class="slide-title">从电阻计数，到一次测多项指标</h2>
+        <p class="lede">下面是几个能查到出处的关键节点，拖动或点时间轴看详情。有些上市年份不同资料说法不一，这里不硬定一个日期。</p>
         <div class="timeline-shell">
           <div class="scrub" id="timeline">
             <div class="scrub-track" id="tl-track">
@@ -139,63 +139,63 @@
       </section>
 
       <!-- 4 核心用途 -->
-      <section class="slide" data-id="uses" data-hint="约50秒：四张卡片各用一句话。药学场景落到周期、凋亡、免疫分型、细胞制品检测。点击卡片展开补充。">
+      <section class="slide" data-id="uses" data-hint="约50秒：四张卡片每张一句话。药学部分落到周期、凋亡、免疫分型和细胞制品检测。点卡片能展开补充。">
         <p class="kicker"><span class="num">04 / 11</span> 核心用途</p>
-        <h2 class="slide-title">在单细胞尺度上看什么、分什么</h2>
-        <p class="lede">流式细胞术的价值，在于对大量单细胞同时获得物理特征与标记信号。点击卡片展开补充说明。</p>
+        <h2 class="slide-title">它能看什么、能分什么</h2>
+        <p class="lede">流式最大的好处：一次能过大量细胞，每个细胞的物理特征（大小、颗粒度）和标记信号都能单独测出来。点卡片看补充。</p>
         <div class="use-grid">
           <button class="use-card" type="button">
             <div class="top">
               <div>
                 <div class="n">01　IMMUNOPHENOTYPING</div>
                 <h3>免疫分型</h3>
-                <p class="brief">用荧光抗体识别细胞表面或胞内标志，分析淋巴细胞等免疫细胞亚群及其相对比例。</p>
+                <p class="brief">用带荧光的抗体去“认”细胞表面或细胞内的标志分子，看淋巴细胞这类免疫细胞分成哪些亚群、各占多少。</p>
               </div>
             </div>
-            <div class="more">这是临床与基础免疫学中最经典的应用之一。多色方案需要合理的对照、补偿或光谱拆分，以及清晰的设门策略。本演示不展开具体抗体面板。</div>
-            <div class="hint">点击展开 / 收起</div>
+            <div class="more">这是临床和基础免疫学里最常见的用法之一。多色实验要做好对照、补偿（或光谱拆分），设门思路也要清楚（设门：在点图上圈出要看的那群细胞）。这里不展开具体用哪些抗体。</div>
+            <div class="hint">点一下展开 / 收起</div>
           </button>
           <button class="use-card" type="button">
             <div class="top">
               <div>
                 <div class="n">02　CYCLE &amp; DEATH</div>
                 <h3>周期与凋亡</h3>
-                <p class="brief">DNA 含量分析可区分 G0/G1、S、G2/M；膜联蛋白 V（Annexin V）与膜完整性染料等常用于凋亡相关分析。</p>
+                <p class="brief">测 DNA 含量能分出 G0/G1、S、G2/M 期；看凋亡常用膜联蛋白 V（Annexin V）加膜完整性染料。</p>
               </div>
             </div>
-            <div class="more">周期分析依赖核酸染料与适当的聚合体排除；凋亡检测的具体组合（如 Annexin V 搭配碘化丙啶或同类活细胞染料）需按试剂说明和实验设计执行，结果解释要结合生物学对照。</div>
-            <div class="hint">点击展开 / 收起</div>
+            <div class="more">周期分析要用核酸染料，还要把粘在一起的细胞（聚合体）排除掉；凋亡用哪种组合（比如 Annexin V 配碘化丙啶 PI，或同类活细胞染料）要按试剂说明和实验设计来，看结果也要结合生物学对照。</div>
+            <div class="hint">点一下展开 / 收起</div>
           </button>
           <button class="use-card" type="button">
             <div class="top">
               <div>
                 <div class="n">03　SORTING</div>
                 <h3>细胞分选</h3>
-                <p class="brief">按设定表型把目标细胞分到收集管，供后续培养、测序或功能实验。分选与纯分析的安全风险并不相同。</p>
+                <p class="brief">按设好的条件把目标细胞分到收集管里，拿去培养、测序或做功能实验。注意：分选和单纯分析的安全风险不一样。</p>
               </div>
             </div>
-            <div class="more">静电液滴分选在高速喷口条件下可产生可吸入气溶胶，喷嘴堵塞时尤为明显。未固定或感染性样本的分选，必须纳入生物安全评估。详见第 8 部分。</div>
-            <div class="hint">点击展开 / 收起</div>
+            <div class="more">静电液滴分选时喷口速度很高，会产生能吸进去的气溶胶，喷嘴堵了更明显。分选未固定或有感染性的样本，一定要先做生物安全评估。详见第 8 页。</div>
+            <div class="hint">点一下展开 / 收起</div>
           </button>
           <button class="use-card" type="button">
             <div class="top">
               <div>
                 <div class="n">04　PHARMACY-RELATED</div>
-                <h3>药学相关场景</h3>
-                <p class="brief">常用于观察化合物对周期阻滞与凋亡的影响、免疫细胞响应，以及抗体或细胞制品的表型检测。</p>
+                <h3>药学里的用法</h3>
+                <p class="brief">常用来看化合物会不会让细胞周期停住、会不会引起凋亡，看免疫细胞的反应，也用来检测抗体或细胞制品的表型。</p>
               </div>
             </div>
-            <div class="more">这些都是文献中常见的研究用途，不是对某一具体药品的结论。任何用于决策的检测都需要经验证的方法、对照与质量控制，并遵守样本相关的生物安全要求。</div>
-            <div class="hint">点击展开 / 收起</div>
+            <div class="more">这些是文献里常见的研究用途，不代表对哪个具体药物下结论。真要拿结果做决定，得用验证过的方法，有对照、有质控，也要遵守样本的生物安全要求。</div>
+            <div class="hint">点一下展开 / 收起</div>
           </button>
         </div>
       </section>
 
       <!-- 5 三大系统 -->
-      <section class="slide" data-id="systems" data-hint="约50秒：建立「流体把细胞排成单列、光学取信号、电子做分析」三句话图景。可悬停或点击图中的三个系统。">
+      <section class="slide" data-id="systems" data-hint="约50秒：三句话讲清楚——流体让细胞排成一列，光学负责拿到信号，电子负责把信号变成数据来分析。可以把鼠标放到图上三个区域，或者点一下。">
         <p class="kicker"><span class="num">05 / 11</span> 三大系统</p>
-        <h2 class="slide-title">一台仪器，三条彼此咬合的链路</h2>
-        <p class="lede">将指针移到示意图的着色区域，或使用右侧按钮，查看流体、光学与电子/分析系统。本图为教学示意，不对应某一型号的真实尺寸。</p>
+        <h2 class="slide-title">一台仪器，三套系统配合干活</h2>
+        <p class="lede">把鼠标放到图上的彩色区域，或者点右边的按钮，看看流体、光学和电子/分析系统各管什么。这是示意图，不是哪台机器的真实尺寸。</p>
         <div class="sys-layout">
           <div class="sys-stage" id="sys-stage">
             <svg viewBox="0 0 1000 640" role="img" aria-label="流式细胞仪三大系统示意：左侧样品与鞘液，中部流动室与激光检测点，右侧检测器与分析工作站">
@@ -243,7 +243,7 @@
                 <path d="M520 440 V560 H700" stroke="#009E73" stroke-width="2"/>
                 <rect x="700" y="540" width="70" height="40" rx="4" fill="#0E2A22" stroke="#009E73"/>
                 <text x="735" y="564" text-anchor="middle" fill="#009E73" font-size="12">SSC</text>
-                <text x="500" y="590" fill="#6E778C" font-size="11">滤光片 / 二向色镜未逐一画出</text>
+                <text x="500" y="590" fill="#6E778C" font-size="11">滤光片、二向色镜没有一一画出</text>
               </g>
 
               <g class="sys-hot" data-sys="electro" tabindex="0" role="button" aria-label="电子与分析系统">
@@ -269,24 +269,24 @@
             <div class="legend-row">
               <span><i class="sw" style="background:#56B4E9"></i>鞘液</span>
               <span><i class="sw" style="background:#E69F00"></i>样品流</span>
-              <span><i class="sw" style="background:#F0E442"></i>激光（形状+文字编码）</span>
+              <span><i class="sw" style="background:#F0E442"></i>激光（看形状和文字区分）</span>
             </div>
           </aside>
         </div>
       </section>
 
       <!-- 6 原理 + 模拟器 -->
-      <section class="slide slide-sim" data-id="sim" data-hint="本页是核心，约2.5–3分钟。建议顺序：确认联锁→开激光→选校准微球、鞘液高于样品流→采集，指出FSC/SSC/荧光；再把样品流调高看点图变散；最后关激光或打开光阑，演示联锁或无信号。可按「演示脚本」。">
+      <section class="slide slide-sim" data-id="sim" data-hint="这页最重要，约2.5–3分钟。顺序：先确认联锁→开激光→选校准微球、鞘液开得比样品流大→开始采集，指一下 FSC/SSC/荧光；再把样品流调大，看点图变散；最后关激光或打开光阑，演示没信号或被联锁拦住。也可以直接点「演示脚本」。">
         <div class="sim-head">
           <div>
             <p class="kicker" style="margin-bottom:8px"><span class="num">06 / 11</span> 检测原理</p>
-            <h2 class="slide-title">在检测点上看清一个细胞，并亲手调一调</h2>
+            <h2 class="slide-title">细胞经过激光时测到什么？动手试试</h2>
           </div>
-          <span class="badge">示意性教学模拟　·　非真实仪器规格</span>
+          <span class="badge">教学用的简化模拟　·　不是真实仪器参数</span>
         </div>
         <div class="sim-grid">
           <div class="panel">
-            <div class="panel-h">流体聚焦与光学检测示意 <span>细胞单列通过激光照射点</span></div>
+            <div class="panel-h">流体聚焦和光学检测（示意）<span>细胞排成一列过激光</span></div>
             <div class="sim-schematic" id="sim-schematic">
               <svg id="sim-svg" viewBox="0 0 760 620" aria-label="流动室示意：鞘液包围样品流，细胞经过激光检测点，前方和侧向检测器收集信号">
                 <defs>
@@ -342,13 +342,13 @@
                 <text x="710" y="148" text-anchor="middle" fill="#6E778C" font-size="10">荧光</text>
 
                 <text x="24" y="590" fill="#6E778C" font-size="11">FSC ≈ 相对大小　·　SSC ≈ 内部复杂度 / 颗粒度　·　FL ≈ 标记荧光</text>
-                <text id="sim-aperture-tag" x="360" y="36" fill="#D55E00" font-size="12" font-family="ui-monospace,monospace" visibility="hidden">⚠ 光阑未关闭（联锁）</text>
+                <text id="sim-aperture-tag" x="360" y="36" fill="#D55E00" font-size="12" font-family="ui-monospace,monospace" visibility="hidden">⚠ 光阑没关好（联锁）</text>
               </svg>
             </div>
           </div>
 
           <div class="panel">
-            <div class="panel-h">操作台 <span>请先满足安全联锁</span></div>
+            <div class="panel-h">操作台 <span>先把安全联锁弄好</span></div>
             <div class="controls">
               <div class="ctrl">
                 <label for="sheath">鞘液流速</label>
@@ -381,8 +381,8 @@
               <div style="color:#9AA3B8;font-size:12px;letter-spacing:.12em;margin-top:4px">激光与联锁</div>
               <div class="locks">
                 <button type="button" class="lock ok" id="btn-laser" aria-pressed="true">激光：开</button>
-                <button type="button" class="lock ok" id="btn-aperture" aria-pressed="true">光阑：已关闭</button>
-                <button type="button" class="lock ok" id="btn-waste" aria-pressed="true">废液桶：已就绪</button>
+                <button type="button" class="lock ok" id="btn-aperture" aria-pressed="true">光阑：关好了</button>
+                <button type="button" class="lock ok" id="btn-waste" aria-pressed="true">废液桶：接好了</button>
               </div>
 
               <div class="row-btns" style="margin-top:6px">
@@ -414,14 +414,14 @@
             </div>
           </div>
         </div>
-        <div class="sim-coach" id="sim-coach">FSC 主要反映细胞的相对大小，SSC 主要反映内部复杂度或颗粒度，荧光来自标记分子被激光激发后的发射。先确认联锁，打开激光，使鞘液流速明显高于样品流，再开始采集。</div>
+        <div class="sim-coach" id="sim-coach">FSC 看细胞的相对大小，SSC 看细胞里面复不复杂、颗粒多不多，荧光是标记分子被激光照到后发出的光。先把联锁弄好、打开激光，鞘液开得明显比样品流大，再点开始采集。</div>
       </section>
 
       <!-- 7 规范操作 -->
-      <section class="slide" data-id="sop" data-hint="约40秒：五步只强调预热、质控、过滤上样、清洗、按SOP关机。细节以核心实验室和仪器说明书为准。">
+      <section class="slide" data-id="sop" data-hint="约40秒：五步只挑重点说——预热、质控、过滤后上样、清洗、按 SOP 关机。细节以核心实验室和仪器说明书为准。">
         <p class="kicker"><span class="num">07 / 11</span> 规范操作</p>
-        <h2 class="slide-title">上机五步，细节服从具体 SOP</h2>
-        <p class="lede">不同厂家、分析仪与分选仪的按键和时序并不相同。以下是核心实验室规程中反复出现的共性步骤，不能替代你所在平台的操作文件。</p>
+        <h2 class="slide-title">上机五步，细节听 SOP 的</h2>
+        <p class="lede">不同厂家、分析仪和分选仪的按键和顺序都不一样。下面是各家核心实验室规程里都会出现的几步，具体还是要看你所在平台的操作文件。</p>
         <div class="sop-steps">
           <div class="sop-nav" role="tablist">
             <button type="button" data-sop="0" aria-selected="true"><span class="n">01</span> 开机预热</button>
@@ -435,67 +435,67 @@
       </section>
 
       <!-- 8 安全要点 -->
-      <section class="slide slide-safe" data-id="safety" data-hint="本课重心，约1.5–2分钟：先讲风险评估；分选气溶胶高于分析；不要解除激光联锁；废液预消毒并按生物危险废物处理；锐器进防穿刺容器。强调以单位生安委和SOP为准。">
+      <section class="slide slide-safe" data-id="safety" data-hint="这页是课程重点，约1.5–2分钟：先讲风险评估；分选的气溶胶风险比分析高；不要解除激光联锁；废液先加消毒剂、按生物危险废物处理；锐器放防穿刺盒。最后提醒：一切以单位生安委和 SOP 为准。">
         <p class="kicker"><span class="num">08 / 11</span> 安全要点</p>
-        <h2 class="slide-title">先评估样本风险，再打开仪器</h2>
+        <h2 class="slide-title">先评估样本风险，再开机</h2>
         <div class="safe-grid">
-          <p class="safe-lead">流式检测的是细胞悬液，其中可能含未固定的人源、感染或基因修饰材料。风险来自生物因子、气溶胶、激光和化学染料。必须先做<strong style="color:#F4F1EA;font-weight:600">样本特异性风险评估</strong>，并遵守国家法规与本单位生物安全委员会要求。本页是教学要点，不能替代批准后的规程。</p>
+          <p class="safe-lead">流式测的是细胞悬液，里面可能有未固定的人源材料、感染性材料或基因修饰材料。风险来自生物因子、气溶胶、激光和化学染料。所以一定要先针对手上这份样本做<strong style="color:#F4F1EA;font-weight:600">风险评估</strong>，并遵守国家法规和本单位生物安全委员会的要求。这页只是教学要点，不能代替批准过的规程。</p>
 
           <button class="safe-card open" type="button">
             <div class="n">01　BIOSAFETY</div>
             <h3>生物安全</h3>
-            <p>未固定人源材料应按潜在血源性病原体防护。固定可降低许多病原体风险，但只有经验证的浓度与作用时间才有意义，不能假定“加过固定剂就一定灭活”。感染因子或病毒载体修饰样本，须按相应生物安全级别和单位审批操作。感染性标本不要在开放管中涡旋，封闭管操作并尽量在生物安全柜中进行。</p>
+            <p>未固定的人源材料，要当作可能带血源性病原体来防护。固定能降低很多病原体的风险，但只有用验证过的浓度和时间才算数，不能以为“加了固定剂就一定灭活了”。有感染因子或用病毒载体改造过的样本，要按对应的生物安全级别和单位审批来做。感染性样本别在开口管里涡旋，用封闭管，尽量在生物安全柜里操作。</p>
           </button>
 
           <button class="safe-card" type="button">
             <div class="n">02　AEROSOL</div>
-            <h3>气溶胶，尤其是分选</h3>
-            <p>分析型仪器也可能产生液滴或气溶胶，但高速喷口分选——特别是喷嘴堵塞时——可形成可吸入气溶胶，风险显著更高。ISAC 细胞分选生物安全标准强调：对活细胞/未固定样本的分选，应使用经测试的气溶胶管理系统（负压、HEPA/ULPA 等），并在最不利条件下验证屏蔽效果。废液桶通气口宜有适当过滤。</p>
+            <h3>气溶胶：分选最要注意</h3>
+            <p>气溶胶就是飘在空气里、能被吸进去的细小液滴。分析型仪器也可能产生，但高速喷口分选——尤其是喷嘴堵了的时候——风险高得多。ISAC（国际细胞分析学会）的分选生物安全标准强调：分选活细胞或未固定样本，要用测试过的气溶胶控制系统（负压、HEPA/ULPA 等），并在最坏的情况下验证防护效果。废液桶通气口最好也加过滤。</p>
           </button>
 
           <button class="safe-card" type="button">
             <div class="n">03　LASER</div>
             <h3>激光与联锁</h3>
-            <p>仪器内部常使用较强激光，但正常使用时有防护罩和联锁。分析型仪器在不拆除罩、不解除联锁时，通常不构成对操作者的光束暴露。禁止自行打开光路罩或短接联锁。应有警示标识并接受相应培训，遵守实验室激光安全规定与现行激光产品安全标准。</p>
+            <p>仪器里面常用比较强的激光，不过正常使用时有防护罩和联锁（联锁：防护一打开，仪器就不让继续工作）。分析型仪器只要不拆罩、不解除联锁，一般不会让人被光束照到。不要自己打开光路罩或短接联锁。要有警示标识、接受培训，遵守实验室激光安全规定和现行激光产品安全标准。</p>
           </button>
 
           <button class="safe-card" type="button">
             <div class="n">04　WASTE</div>
             <h3>废液</h3>
-            <p>流式废液常同时带有生物风险和化学风险（染料、固定剂等）。许多核心实验室要求废液桶预先加入适量含氯消毒剂，并按生物危险废物路径处置。具体消毒液种类、浓度和排放方式必须以所在单位 SOP 和环境管理规定为准，不要把未经处理的废液倒入普通水槽了事。</p>
+            <p>流式废液往往既有生物风险又有化学风险（染料、固定剂等）。很多核心实验室要求废液桶里先加适量含氯消毒剂，再按生物危险废物处理。用什么消毒液、多少浓度、怎么排放，都要按所在单位 SOP 和环境管理规定来，别把没处理的废液直接倒进普通水槽。</p>
           </button>
 
           <button class="safe-card" type="button">
             <div class="n">05　SHARPS</div>
             <h3>锐器与防护</h3>
-            <p>玻璃管、针头等锐器必须进入防穿刺、防渗漏的锐器盒，不得回套针头，不得混入普通垃圾袋。实验服、手套为基本防护，必要时增加眼面部防护。发生溢出或暴露，按实验室应急预案处理并报告。门口应有相应的生物危害沟通信息。</p>
+            <p>玻璃管、针头这些锐器，要放进防穿刺、防漏的锐器盒，针帽别套回去，也不能扔进普通垃圾袋。实验服、手套是最基本的防护，需要时再加护目镜或面屏。万一洒了或被暴露，按实验室应急预案处理并上报。门口要贴好对应的生物危害提示。</p>
           </button>
 
           <button class="safe-card" type="button">
             <div class="n">06　RULES</div>
-            <h3>法规与单位规程</h3>
-            <p>在中国开展相关工作，应遵循《病原微生物实验室生物安全管理条例》、GB 19489《实验室生物安全通用要求》以及单位生物安全委员会的审批意见。激光设备尚须符合现行激光产品安全标准（如 GB/T 7247.1 系列）。国际层面，CDC/NIH 的 BMBL 与 ISAC 分选生物安全标准是重要的专业参照，但不能自动替代国内法规。</p>
+            <h3>法规和单位规定</h3>
+            <p>在国内做这类工作，要遵守《病原微生物实验室生物安全管理条例》、GB 19489《实验室生物安全通用要求》，以及单位生物安全委员会的审批意见。激光设备还要符合现行激光产品安全标准（如 GB/T 7247.1 系列）。国际上，CDC/NIH 的 BMBL 和 ISAC 分选生物安全标准是重要参考，但不能直接代替国内法规。</p>
           </button>
         </div>
       </section>
 
       <!-- 9 小结 -->
-      <section class="slide" data-id="summary" data-hint="约30秒：四条带走即可，不必再展开。可提醒模拟器是定性教学模型。">
+      <section class="slide" data-id="summary" data-hint="约30秒：四条说完就行，不用再展开。可以提一句：模拟器只是定性的教学模型。">
         <p class="kicker"><span class="num">09 / 11</span> 小结</p>
-        <h2 class="slide-title">带走这四件事</h2>
+        <h2 class="slide-title">记住这四点</h2>
         <ol class="takeaways">
-          <li><span class="n">01</span><span>流式细胞术让细胞在鞘液聚焦下逐个经过检测点，同时获得散射与荧光信息：FSC 侧重相对大小，SSC 侧重颗粒度，荧光对应标记。</span></li>
-          <li><span class="n">02</span><span>流体、光学、电子三大系统缺一不可。样品流相对鞘液过高时，流体聚焦变差，点图会散、测量变差——刚才的模拟就是在演示这件事。</span></li>
-          <li><span class="n">03</span><span>规范操作包含开机预热、质控、上样、清洗与关机。按键细节服从具体仪器和核心实验室 SOP，不要凭记忆省略质控和清洗。</span></li>
-          <li><span class="n">04</span><span>生物安全是本课的重心：先做样本风险评估。未固定样本、分选气溶胶、激光联锁、废液与锐器，都必须认真对待。</span></li>
+          <li><span class="n">01</span><span>鞘液让细胞排好队，一个个经过检测点，同时测散射和荧光：FSC 看相对大小，SSC 看颗粒度，荧光看标记。</span></li>
+          <li><span class="n">02</span><span>流体、光学、电子三套系统少一个都不行。样品流相对鞘液太大，聚焦就变差，点图变散、测不准——刚才模拟器演示的就是这个。</span></li>
+          <li><span class="n">03</span><span>规范操作就五步：开机预热、质控、上样、清洗、关机。具体按键听仪器和核心实验室 SOP 的，别凭印象跳过质控和清洗。</span></li>
+          <li><span class="n">04</span><span>生物安全是这门课的重点：先做样本风险评估。未固定样本、分选气溶胶、激光联锁、废液和锐器，每一项都不能马虎。</span></li>
         </ol>
       </section>
 
       <!-- 10 参考文献 -->
-      <section class="slide" data-id="refs" data-hint="不必逐条念。需要时停留，指出历史、操作与安全三类文献均可核对。">
+      <section class="slide" data-id="refs" data-hint="不用逐条念。需要时停一下，说明历史、操作、安全三类文献都能查到。">
         <p class="kicker"><span class="num">10 / 11</span> 参考文献</p>
-        <h2 class="slide-title">可核对的来源</h2>
-        <p class="lede" style="margin-bottom:12px">下列文献用于支撑本演示中的史实、原理表述与安全要点。操作时序引自公开的核心实验室规程，作为常见实践例证，而非全球统一标准。</p>
+        <h2 class="slide-title">资料来源</h2>
+        <p class="lede" style="margin-bottom:12px">下面这些文献是本演示里史实、原理和安全要点的出处。操作顺序参考的是公开的核心实验室规程，只是常见做法的例子，不是全球统一标准。</p>
         <div class="refs">
           <h3>历史与原理</h3>
           <ol>
@@ -530,17 +530,17 @@
       </section>
 
       <!-- 11 致谢与提问 -->
-      <section class="slide slide-end" data-id="end" data-hint="致谢后直接提问。若冷场，可用下面四问引导。不要追加个人署名或校徽。">
+      <section class="slide slide-end" data-id="end" data-hint="说完谢谢就直接进入提问。如果没人问，可以用下面四个问题带一下。不要加个人署名或校徽。">
         <p class="kicker"><span class="num">11 / 11</span> 致谢</p>
-        <h1>感谢聆听</h1>
-        <p class="sub">欢迎提问　·　约 2–3 分钟</p>
+        <h1>谢谢大家</h1>
+        <p class="sub">有问题欢迎问　·　大约 2–3 分钟</p>
         <div class="qlist">
           <div><b>Q1</b>为什么样品流相对鞘液太高时，点图会散？</div>
-          <div><b>Q2</b>分析仪和分选仪，在气溶胶风险上有何不同？</div>
-          <div><b>Q3</b>样本“已经固定”，是否就可以在普通区域随意分析？</div>
-          <div><b>Q4</b>FSC、SSC 和荧光各自主要说明什么？</div>
+          <div><b>Q2</b>分析仪和分选仪，气溶胶风险有什么不一样？</div>
+          <div><b>Q3</b>样本“已经固定”了，是不是就能在普通区域随便测？</div>
+          <div><b>Q4</b>FSC、SSC 和荧光分别主要告诉我们什么？</div>
         </div>
-        <p class="note-lite" style="margin-top:36px">中山大学　「实验安全与生物安全」课程汇报　·　本文件为教学演示，不代表学校官方发布</p>
+        <p class="note-lite" style="margin-top:36px">中山大学「实验安全与生物安全」课程汇报　·　教学演示用，不是学校官方发布</p>
       </section>
 
       <div id="hintbar" aria-live="polite"><div class="box"><span class="k">SPEAKER</span><span id="hint-text"></span></div></div>
@@ -552,7 +552,7 @@
     </div>
 
     <div id="overview">
-      <h2>总览　·　再次点击进入，Esc 关闭</h2>
+      <h2>总览　·　点一页进入，Esc 关闭</h2>
       <div class="ov-grid" id="ov-grid"></div>
     </div>
     <div id="help">
@@ -564,14 +564,14 @@
           <dt>Home / End</dt><dd>封面 / 末页</dd>
           <dt>数字 1–9，0，-</dt><dd>跳到对应页（- 为第 11 页）</dd>
           <dt>F</dt><dd>全屏</dd>
-          <dt>H</dt><dd>开演讲提示</dd>
+          <dt>H</dt><dd>打开演讲提示</dd>
           <dt>Esc</dt><dd>总览 / 关闭浮层</dd>
           <dt>?</dt><dd>本说明</dd>
         </dl>
-        <p class="note-lite" style="margin-top:18px">在模拟器页，方向键仍可翻页；请用鼠标或触摸调节控件。本演示可完全离线运行。</p>
+        <p class="note-lite" style="margin-top:18px">在模拟器页，方向键照样能翻页；调控件请用鼠标或手指。整个演示不联网也能用。</p>
       </div>
     </div>
   </div>
-  <script src="assets/presentation.js?v=3"></script>
+  <script src="assets/presentation.js?v=4"></script>
 </body>
 </html>

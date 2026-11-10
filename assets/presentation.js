@@ -4,7 +4,7 @@
 
   const SLIDE_TITLES = [
     "封面", "汇报路径", "发展简史", "核心用途", "三大系统",
-    "检测原理与模拟", "规范操作", "安全要点", "小结", "参考文献", "致谢与提问"
+    "检测原理", "规范操作", "安全要点", "小结", "参考文献", "致谢"
   ];
 
   const HISTORY = [
@@ -13,94 +13,94 @@
       pos: 0,
       tag: "库尔特计数原理",
       who: "Wallace H. Coulter",
-      body: "1948 年 10 月，Coulter 用适当稀释的血液演示：单个血细胞通过通电微孔时引起短暂电阻变化，据此可计数并反映体积。专利于 1949 年 8 月 27 日申请，1953 年 10 月 20 日授权（US 2,656,508）。1950 年代中期，基于该原理的自动血液细胞计数装置进入商品化（Coulter Counter）。这一电阻法常被视为流式细胞术的重要前身之一。",
-      src: "主要依据：美国专利 US 2,656,508；Graham, Cytometry A, 2022；以及关于 1948 年演示的考证（PMC4237176）。Coulter Counter 具体型号的首次公开年份在不同回顾中有 1950 年代中期的表述差异，故此处不钉死单一型号年份。"
+      body: "1948 年 10 月，Coulter 用稀释过的血做了演示：一个血细胞穿过通电的小孔时，电阻会短暂变一下，靠这个就能数细胞，还能看出细胞体积。专利 1949 年 8 月 27 日申请，1953 年 10 月 20 日授权（US 2,656,508）。1950 年代中期，用这个原理的自动血细胞计数仪开始上市（Coulter Counter）。很多人把这种电阻法看作流式细胞术的前身之一。",
+      src: "依据：美国专利 US 2,656,508；Graham, Cytometry A, 2022；关于 1948 年演示的考证（PMC4237176）。Coulter Counter 具体型号哪年首次公开，不同回顾说法略有差别（都在 1950 年代中期），所以这里不写死。"
     },
     {
       year: "1953",
       pos: 1,
       tag: "鞘流与流体聚焦",
       who: "P. J. Crosland-Taylor",
-      body: "Crosland-Taylor 在 Nature 报道了一种光学计数装置：利用同轴层流，让鞘液包围并加速样品柱，使细胞在较宽的管子中央排成细柱。这样既便于显微观察，又减少细管堵塞和细胞并肩通过造成的重合计数。今天大多数流式细胞仪仍用这一流体聚焦思想（也存在微毛细管、声聚焦等其他方案）。",
-      src: "Crosland-Taylor, Nature, 1953;171:37–38。层流的流体力学背景可追溯到 Reynolds 1883 年的工作，现代综述见 Picot 等, Cytotechnology, 2012。"
+      body: "Crosland-Taylor 在 Nature 上报道了一种光学计数装置：让鞘液包着样品一起流（同轴层流），把样品柱带快、挤细，细胞就在较宽的管子正中间排成一条细线——就像让细胞排队过安检。这样方便观察，也不容易堵管、不容易把并排过去的两个细胞数成一个。今天大多数流式细胞仪还在用这个“流体聚焦”的办法（也有微毛细管、声波聚焦等别的方案）。",
+      src: "Crosland-Taylor, Nature, 1953;171:37–38。层流的流体力学背景可以追到 Reynolds 1883 年的工作，综述见 Picot 等, Cytotechnology, 2012。"
     },
     {
       year: "1965",
       pos: 2,
-      tag: "光学快测与按体积分选",
+      tag: "光学快速测量 + 按体积分选",
       who: "Kamentsky 等；Mack J. Fulwyler",
-      body: "Kamentsky、Melamed 与 Derman 报道了可对单个细胞做超快速分光测量的仪器。同年，Fulwyler 在洛斯阿拉莫斯将库尔特体积测量与喷墨式液滴充电偏转结合，实现按体积的电子分选。光学分析和静电分选两条线在此后交汇。",
+      body: "Kamentsky、Melamed 和 Derman 报道了一台能对单个细胞做超快速分光测量的仪器。同一年，Fulwyler 在洛斯阿拉莫斯把库尔特的体积测量，和喷墨打印那种“液滴带电、再偏转”的办法结合起来，按体积把细胞电子分选出来。从这以后，光学分析和静电分选两条路慢慢合到了一起。",
       src: "Kamentsky et al., Science, 1965;150:630–631；Fulwyler, Science, 1965;150:910–911。"
     },
     {
       year: "1969–1972",
       pos: 3,
-      tag: "荧光检测与 FACS 成形",
+      tag: "荧光检测，FACS 出现",
       who: "Dittrich & Göhde；Hulett、Bonner、Herzenberg 等",
-      body: "1969 年，Dittrich 与 Göhde 报道悬浮单细胞的脉冲荧光测量，这一路线随后发展为脉冲细胞光度计（商业装置常称为 ICP）。同年，Hulett、Bonner、Herzenberg 等报道按细胞内荧光自动分选哺乳动物细胞。1972 年，Bonner 等在 Review of Scientific Instruments 系统描述了采用激光激发与静电液滴分选的荧光激活细胞分选（FACS）装置。",
+      body: "1969 年，Dittrich 和 Göhde 报道了对悬浮单细胞的脉冲荧光测量，后来发展成脉冲细胞光度计（商用设备常叫 ICP）。同一年，Hulett、Bonner、Herzenberg 等报道了按细胞内荧光自动分选哺乳动物细胞。1972 年，Bonner 等在 Review of Scientific Instruments 上完整介绍了用激光激发、静电液滴分选的荧光激活细胞分选（FACS）装置。",
       src: "Dittrich & Göhde, Z Naturforsch B, 1969;24:360–361；Hulett et al., Science, 1969;166:747–749；Bonner et al., Rev Sci Instrum, 1972;43:404–409。"
     },
     {
       year: "1970年代早期",
       pos: 4,
-      tag: "商品化分选",
-      who: "斯坦福实验室技术走向产业",
-      body: "在实验室原型之后，Becton Dickinson 将荧光激活细胞分选技术商品化，FACS 随后成为通用名称乃至注册商标。关于第一台商品化仪器投放市场的年份，厂商回顾与部分综述中可见 1973 或 1974 的不同说法，本演示不选择其中之一作为唯一史实，只确认其发生在 1970 年代早期。",
-      src: "Herzenberg 等对 FACS 命名与早期工作的回顾（Immunol Today, 2000）；商品化年份存在 1973/1974 的文献出入，故作区间表述。"
+      tag: "分选仪上市",
+      who: "斯坦福实验室的技术做成了商品",
+      body: "有了实验室原型之后，Becton Dickinson 把荧光激活细胞分选做成了商品，FACS 后来成了通用叫法，也是注册商标。第一台商品机哪年上市，厂家回顾和一些综述里有 1973 和 1974 两种说法，这里不选边，只说是在 1970 年代早期。",
+      src: "Herzenberg 等对 FACS 命名和早期工作的回顾（Immunol Today, 2000）；上市年份文献里有 1973/1974 的出入，所以写成一个时间段。"
     },
     {
       year: "1978",
       pos: 5,
-      tag: "“流式细胞术”这一名称",
+      tag: "有了“流式细胞术”这个名字",
       who: "Pensacola 会议",
-      body: "1978 年，在佛罗里达 Pensacola 举行的 American Engineering Foundation 会议上，这一技术被改称为 flow cytometry（流式细胞术），并逐渐取代较早的 pulse cytophotometry（脉冲细胞光度术）等叫法。",
-      src: "Picot 等, Cytotechnology, 2012（PMC3279584）对会议更名的综述。"
+      body: "1978 年，在佛罗里达 Pensacola 开的 American Engineering Foundation 会议上，这项技术改叫 flow cytometry（流式细胞术），慢慢取代了以前 pulse cytophotometry（脉冲细胞光度术）之类的叫法。",
+      src: "Picot 等, Cytotechnology, 2012（PMC3279584）里讲了这次改名。"
     },
     {
-      year: "今天",
+      year: "现在",
       pos: 6,
       tag: "多参数单细胞分析",
-      who: "分析仪与分选仪并行发展",
-      body: "当代仪器可在多激光、多荧光通道下对每个细胞同时测量散射与多种标记，从免疫分型、周期与死亡分析，到细胞制品与药物效应研究。分析与分选共享检测原理，但分选的气溶胶风险更高，安全要求也更严格。本页只抓主线，细节见参考文献。",
-      src: "原理综述见 Shapiro, Practical Flow Cytometry, 4th ed., 2003；Picot 等, 2012。安全标准见 Holmes 等, Cytometry A, 2014。"
+      who: "分析仪和分选仪一起发展",
+      body: "现在的仪器有多个激光、多个荧光通道，每个细胞能同时测散射和好几种标记，用在免疫分型、细胞周期和死亡分析，也用在细胞制品和药物效应研究上。分析和分选的检测原理一样，但分选的气溶胶风险更高，安全要求也更严。这页只讲主线，细节看参考文献。",
+      src: "原理综述：Shapiro, Practical Flow Cytometry, 4th ed., 2003；Picot 等, 2012。安全标准：Holmes 等, Cytometry A, 2014。"
     }
   ];
 
   const SYS_COPY = {
     fluid: {
       title: "流体系统",
-      html: "鞘液与样品在流动室中形成同轴层流：较快的鞘液把较慢的样品流拉细、拉直，使细胞近似单列通过激光照射的检测点。样品流相对鞘液升高时，芯流变粗，细胞更容易偏离中心，测量变异增大。分析结束后，液体进入废液路径。<ul><li>关键件：鞘液桶、样品管、流动室或喷嘴、废液桶</li><li>教学要点：流速比决定聚焦质量</li><li>下一页可用模拟器亲眼看到这一点</li></ul>"
+      html: "鞘液和样品在流动室里一起流，鞘液在外、样品在中间（同轴层流）。鞘液流得快，把慢一点的样品流拉细、拉直，细胞就差不多一个接一个地经过激光检测点，像排队过安检。样品流相对鞘液开大了，中间这股（芯流）就变粗，细胞容易跑偏，测量误差变大。测完的液体流进废液桶。<ul><li>主要部件：鞘液桶、样品管、流动室或喷嘴、废液桶</li><li>要记住：两者的流速比决定聚焦好不好</li><li>下一页的模拟器可以亲眼看到这一点</li></ul>"
     },
     optics: {
       title: "光学系统",
-      html: "一个或多个激光在检测点照射细胞。前向小角散射（FSC）主要与细胞的相对大小有关；大致 90° 的侧向散射（SSC）更多反映内部复杂度或颗粒度。荧光则来自被激发的标记分子，经二向色镜与滤光片分光后，由光电倍增管或雪崩二极管等探测器接收。<ul><li>FSC：常用光电二极管</li><li>SSC 与荧光：常用 PMT 或等效高灵敏探测器</li><li>激光关闭或光路被挡住时，无法得到有效信号</li></ul>"
+      html: "一个或几个激光照在检测点的细胞上。往前、小角度散出来的光叫前向散射（FSC），主要跟细胞的相对大小有关；从侧面大约 90° 散出来的叫侧向散射（SSC），更多反映细胞里面复不复杂、颗粒多不多。荧光是标记分子被激发后发的光，经二向色镜和滤光片分开颜色，再由光电倍增管（PMT）或雪崩二极管等探测器接收。<ul><li>FSC：一般用光电二极管</li><li>SSC 和荧光：一般用 PMT（把很弱的光变成电信号并放大）或类似的高灵敏探测器</li><li>激光关了或光路被挡住，就拿不到有效信号</li></ul>"
     },
     electro: {
       title: "电子 / 分析系统",
-      html: "探测器把光信号转成电脉冲。系统对脉冲进行放大、（在现代仪器中）模数转换，再按阈值触发记录事件，并生成散点图、直方图。多色实验还涉及补偿或光谱拆分、设门与统计。<ul><li>阈值可排除过小的碎屑事件</li><li>增益过高会导致信号饱和、峰值贴边</li><li>图的质量首先取决于前面的流体与光学是否稳定</li></ul>"
+      html: "探测器把光信号变成电脉冲。系统把脉冲放大，（现代仪器里）再转成数字，超过阈值的才记成一个“事件”，最后画成散点图、直方图。多色实验还要做补偿或光谱拆分、设门（在图上圈出要看的细胞群）和统计。<ul><li>阈值能把太小的碎屑挡在外面</li><li>增益开太高，信号会饱和、峰挤到边上</li><li>图好不好，首先看前面的流体和光学稳不稳</li></ul>"
     }
   };
 
   const SOP = [
     {
       title: "开机预热",
-      html: "<p>先看液体，再按电源。</p><ul><li>确认鞘液足够完成本次实验，管路连接可靠。</li><li>确认废液桶已连接、未满，并按本实验室 SOP 预先加入适量消毒剂。</li><li>开启仪器与工作站，按说明书进行灌注或排气（如需要）。</li><li>预热以使激光与流体系统稳定。不同机型常见约 15–30 分钟，以随机说明书为准，不要用未稳定的系统做正式质控。</li></ul><p class='caveat'>时序参考 Houston Methodist、UNC 等核心实验室公开 SOP 中的共性做法，具体分钟数不能套用到所有型号。</p>"
+      html: "<p>先看液体，再开电源。</p><ul><li>确认鞘液够这次实验用，管路接牢。</li><li>确认废液桶接好、没满，并按本实验室 SOP 先加入适量消毒剂。</li><li>打开仪器和工作站，需要的话按说明书灌注或排气。</li><li>预热，让激光和流体系统稳定下来。不同机型一般 15–30 分钟左右，以随机说明书为准；没稳定就别做正式质控。</li></ul><p class='caveat'>顺序参考了 Houston Methodist、UNC 等核心实验室公开 SOP 里的共同做法，具体分钟数不能套到所有型号上。</p>"
     },
     {
       title: "质控",
-      html: "<p>用校准微球做日常质控，确认仪器处于可接受状态后再跑实验样品。</p><ul><li>按平台规程加载指定批次的质控微球。</li><li>观察散射簇是否紧密、荧光峰是否落在预期位置、变异系数是否可接受。</li><li>质控失败时，先按规程清洗流动室、排查气泡或堵塞，必要时停止使用并通知管理人员。</li></ul><p class='caveat'>下一页的模拟器中，“校准微球”样品就是用来体会“紧密簇 + 狭窄荧光峰”应当长什么样（仅为定性示意）。</p>"
+      html: "<p>先用校准微球做日常质控，确认仪器状态没问题，再跑实验样品。</p><ul><li>按平台规定上指定批次的质控微球。</li><li>看散射点是不是聚成紧紧的一团、荧光峰是不是在该在的位置、变异系数（CV）能不能接受。</li><li>质控没过，先按规程清洗流动室、查有没有气泡或堵塞；必要时停用，并告诉平台管理人员。</li></ul><p class='caveat'>上一页模拟器里的“校准微球”，就是让大家看看“一团紧密的点 + 很窄的荧光峰”长什么样（只是定性示意）。</p>"
     },
     {
       title: "上样",
-      html: "<p>样品准备的质量，往往比事后调电压更重要。</p><ul><li>制成单细胞悬液，必要时过滤，避免团聚造成堵塞或重合事件。</li><li>控制细胞浓度，先以较低样品流开始，再按需要上调。</li><li>上样前再次确认样本的生物安全属性（是否固定、是否人源或感染材料）与批准的操作地点。</li><li>出现压力异常、事件率骤变或点图突然散乱，应暂停并检查堵塞。</li></ul>"
+      html: "<p>样品准备得好不好，往往比事后调电压更重要。</p><ul><li>做成单细胞悬液，需要时先过滤，免得细胞抱团堵管，或两个细胞被当成一个事件。</li><li>控制细胞浓度，先用较低的样品流，需要再往上调。</li><li>上样前再确认一遍样本的生物安全情况（固定了没有、是不是人源或感染性材料），以及批准在哪里操作。</li><li>如果压力不对、事件率突然变了或点图突然乱了，先停下来查是不是堵了。</li></ul>"
     },
     {
       title: "清洗",
-      html: "<p>流动室和管路的清洁，决定下一位使用者能否得到干净的背景。</p><ul><li>样品之间用鞘液或推荐冲洗液冲洗，至事件率回到本底。</li><li>某些核酸染料（如碘化丙啶、吖啶橙等）以及高浓度微球后，常需加强清洗。</li><li>怀疑堵塞时，按仪器规程执行流动室清洁，不要擅自拆开高压或激光部件。</li></ul>"
+      html: "<p>流动室和管路洗没洗干净，决定了下一个人能不能得到干净的背景。</p><ul><li>两个样品之间用鞘液或推荐的冲洗液冲，冲到事件率回到本底。</li><li>用过某些核酸染料（如碘化丙啶、吖啶橙）或高浓度微球之后，常常要多洗一会儿。</li><li>怀疑堵了，按仪器规程清洗流动室，别自己拆高压或激光部件。</li></ul>"
     },
     {
       title: "关机",
-      html: "<p>实验结束不等于直接断电。</p><ul><li>按 SOP 运行关机清洗程序。许多分析型仪器在结束时依次运行含消毒剂的液体和去离子水（常见示例为数分钟级的冲洗，具体以说明书为准）。</li><li>执行流体停机，将样品针置于适当保护液体中（若规程要求）。</li><li>处理废液、检查并按规定补充鞘液，关闭软件、仪器与计算机。</li><li>登记使用记录，异常情况写明。</li></ul><p class='caveat'>公开例证：Houston Methodist 对 Fortessa/LSRII 的漂白水—纯水关机流程。请以你所用平台的现行文件为准。</p>"
+      html: "<p>做完实验，不是直接断电就完事。</p><ul><li>按 SOP 跑关机清洗程序。很多分析型仪器最后会依次走含消毒剂的液体和去离子水（一般是几分钟的冲洗，以说明书为准）。</li><li>停流体；规程要求的话，把样品针泡在合适的保护液里。</li><li>处理废液，检查并按规定补鞘液，关软件、仪器和电脑。</li><li>填使用记录，有异常写清楚。</li></ul><p class='caveat'>公开例子：Houston Methodist 给 Fortessa/LSRII 写的“漂白水—纯水”关机流程。请以你所用平台的现行文件为准。</p>"
     }
   ];
 
@@ -392,7 +392,7 @@
     // 教学模型：样品/鞘液比升高 → 芯流变粗、位置抖动增大（参见 Picot 2012 的定性描述）
     const width = 6 + ratio * 42;
     const jitter = Math.min(1, Math.max(0, (ratio - 0.28) / 0.9));
-    const quality = jitter < 0.22 ? "良好" : jitter < 0.55 ? "一般" : "差（芯流过粗）";
+    const quality = jitter < 0.22 ? "好" : jitter < 0.55 ? "一般" : "差（芯流太粗）";
     return { ratio, width, jitter, quality, collapsed: jitter > 0.62 };
   }
 
@@ -409,39 +409,39 @@
   function updateCoachAuto() {
     if (sim.demoTimer) return;
     if (!sim.apertureClosed) {
-      setCoach("安全联锁：模拟光阑未关闭，拒绝采集。真实仪器在防护罩打开或联锁被解除时不应继续工作。", "alert");
+      setCoach("安全联锁：光阑没关好，不让采集。真实仪器也一样，防护罩打开或联锁被解除时不应该继续工作。", "alert");
       return;
     }
     if (!sim.wasteReady) {
-      setCoach("安全联锁：废液桶未就绪，拒绝采集。开机前应确认废液桶已连接、未满，并按 SOP 加入消毒剂。", "alert");
+      setCoach("安全联锁：废液桶没接好，不让采集。开机前要确认废液桶接好、没满，并按 SOP 加好消毒剂。", "alert");
       return;
     }
     if (!sim.laserOn) {
-      setCoach("激光关闭，激发光未到达检测点，无法获得有效的散射或荧光信号。请先打开激光再采集。", "alert");
+      setCoach("激光关着，光照不到检测点，测不到有效的散射和荧光信号。先打开激光再采集。", "alert");
       return;
     }
     const f = focusModel();
     if (f.collapsed) {
-      setCoach("样品流速相对鞘液过高，流体聚焦变差，细胞不能稳定单列通过检测点。点图会变散，测量变异增大。请提高鞘液或降低样品流。", "alert");
+      setCoach("样品流相对鞘液开太大了，聚焦变差，细胞没法稳稳地一个个排队通过检测点。点图会散开，测量误差变大。把鞘液调高，或把样品流调低。", "alert");
       return;
     }
     if (sim.gain > 120) {
-      setCoach("光电倍增管增益偏高，荧光容易饱和、峰值贴边。这是定性示意：真实电压/增益范围以仪器为准。", "alert");
+      setCoach("PMT（光电倍增管）增益偏高，荧光容易饱和，峰会挤到边上。这只是定性示意，真实的电压/增益范围以仪器为准。", "alert");
       return;
     }
     if (sim.acquiring && sim.type === "beads") {
-      setCoach("校准微球应形成紧密的散射簇和狭窄的荧光峰，常用于日常质控。FSC ≈ 相对大小，SSC ≈ 颗粒度，荧光 ≈ 标记信号。", "ok");
+      setCoach("校准微球应该挤成紧紧的一小团，荧光峰又窄又尖，日常质控就靠它。FSC ≈ 相对大小，SSC ≈ 颗粒度，荧光 ≈ 标记信号。", "ok");
       return;
     }
     if (sim.acquiring && sim.type === "lymph") {
-      setCoach("淋巴细胞通常落在较低的 SSC 区域；单核细胞、粒细胞（若出现）SSC 更高。这是教学用的示意分群，不是某一次真实血样。", "ok");
+      setCoach("淋巴细胞一般落在 SSC 比较低的地方；单核细胞、粒细胞（如果有）SSC 更高。这是教学用的示意分群，不是真实的某一次血样。", "ok");
       return;
     }
     if (sim.acquiring && sim.type === "apo") {
-      setCoach("教学示意：Annexin V（横轴）与膜完整性染料（纵轴）常用来区分活细胞、早期凋亡与晚期凋亡/坏死。具体方案以试剂说明和实验设计为准。", "ok");
+      setCoach("示意：横轴 Annexin V，纵轴膜完整性染料，常用来分出活细胞、早期凋亡和晚期凋亡/坏死。具体方案按试剂说明和实验设计来。", "ok");
       return;
     }
-    setCoach("FSC 主要反映相对大小，SSC 主要反映内部复杂度或颗粒度，荧光来自标记分子的发射。先满足联锁，打开激光，使鞘液流速明显高于样品流，再开始采集。", "");
+    setCoach("FSC 看细胞的相对大小，SSC 看细胞里面复不复杂、颗粒多不多，荧光是标记分子被激光照到后发出的光。先把联锁弄好、打开激光，鞘液开得明显比样品流大，再点开始采集。", "");
   }
 
   function syncSchematic() {
@@ -789,7 +789,7 @@
   });
   document.getElementById("btn-aperture").addEventListener("click", function () {
     sim.apertureClosed = !sim.apertureClosed;
-    this.textContent = sim.apertureClosed ? "光阑：已关闭" : "光阑：打开";
+    this.textContent = sim.apertureClosed ? "光阑：关好了" : "光阑：开着";
     this.setAttribute("aria-pressed", sim.apertureClosed ? "true" : "false");
     this.classList.toggle("ok", sim.apertureClosed);
     this.classList.toggle("warn", !sim.apertureClosed);
@@ -803,7 +803,7 @@
   });
   document.getElementById("btn-waste").addEventListener("click", function () {
     sim.wasteReady = !sim.wasteReady;
-    this.textContent = sim.wasteReady ? "废液桶：已就绪" : "废液桶：未连接";
+    this.textContent = sim.wasteReady ? "废液桶：接好了" : "废液桶：没接";
     this.setAttribute("aria-pressed", sim.wasteReady ? "true" : "false");
     this.classList.toggle("ok", sim.wasteReady);
     this.classList.toggle("warn", !sim.wasteReady);
@@ -826,7 +826,7 @@
     }
     const steps = [
       () => {
-        setCoach("演示脚本开始：先把联锁放到安全状态——光阑关闭、废液桶就绪，并打开激光。", "ok");
+        setCoach("演示开始：先把联锁调到安全状态——光阑关好、废液桶接好，再打开激光。", "ok");
         if (!sim.apertureClosed) document.getElementById("btn-aperture").click();
         if (!sim.wasteReady) document.getElementById("btn-waste").click();
         if (!sim.laserOn) document.getElementById("btn-laser").click();
@@ -836,16 +836,16 @@
         document.querySelector('#sample-type [data-type="beads"]').click();
       },
       () => {
-        setCoach("以校准微球、鞘液高于样品流开始采集。请看：FSC–SSC 出现紧密簇，直方图出现狭窄荧光峰。", "ok");
+        setCoach("用校准微球、鞘液比样品流大，开始采集。看：FSC–SSC 图上是紧紧的一小团点，直方图上是一个很窄的荧光峰。", "ok");
         if (!sim.acquiring) tryStart();
       },
       () => {
-        setCoach("现在把样品流显著提高——芯流变粗，细胞不再稳定单列，点图变散。这是最常见的教学失败模式。", "alert");
+        setCoach("现在把样品流开大——中间的芯流变粗，细胞不再一个个排队，点图就散了。这是最常见的“翻车”情况。", "alert");
         $sample.value = 92;
         $sample.dispatchEvent(new Event("input"));
       },
       () => {
-        setCoach("把样品流降回来，点图会重新收紧。接下来关闭激光：即使仍在“采集”，也没有有效信号进入。", "alert");
+        setCoach("把样品流调回来，点图又会收紧。接着关掉激光：就算还在“采集”，也没有有效信号进来。", "alert");
         $sample.value = 22;
         $sample.dispatchEvent(new Event("input"));
         clearPlots();
@@ -853,14 +853,14 @@
       },
       () => {
         if (!sim.laserOn) document.getElementById("btn-laser").click();
-        setCoach("最后演示联锁：打开模拟光阑后，采集会被拒绝。真实仪器同样不允许在防护解除时继续工作。", "alert");
+        setCoach("最后看联锁：把光阑打开，采集就被拦住了。真实仪器也一样，防护打开时不允许继续工作。", "alert");
         if (sim.acquiring) tryStart();
         if (sim.apertureClosed) document.getElementById("btn-aperture").click();
         tryStart();
       },
       () => {
         if (!sim.apertureClosed) document.getElementById("btn-aperture").click();
-        setCoach("脚本结束。你可以改选“淋巴细胞”或“凋亡混合样”，或继续自己调节流速与增益。", "ok");
+        setCoach("演示结束。可以换成“淋巴细胞”或“凋亡混合样”，或者自己再调调流速和增益。", "ok");
         document.getElementById("btn-demo").textContent = "演示脚本";
         sim.demoTimer = 0;
       }
